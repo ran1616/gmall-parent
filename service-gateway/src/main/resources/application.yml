@@ -1,0 +1,18 @@
+# 配置服务的端口号
+server:
+  port: 80
+
+# 动态路由配置
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+      routes:
+        - id: service-product
+          uri: lb://service-product
+          predicates:
+            - Path=/admin/product/**
