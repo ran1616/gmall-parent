@@ -11,8 +11,18 @@ spring:
           '[/**]':
             allowedOrigins: "*"
             allowedMethods: "*"
+            allowedHeaders: "*"
       routes:
         - id: service-product
           uri: lb://service-product
           predicates:
             - Path=/admin/product/**
+        - id: web-all
+          uri: lb://web-all
+          predicates: # 断言  ----> 判断语言
+            - Host=**.gmall.com,gmall.com
+        - id: service-item
+          uri: lb://service-item
+          predicates:
+            - Path=/*/item/**
+

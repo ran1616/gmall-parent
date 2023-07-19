@@ -1,7 +1,7 @@
 package com.atguigu.gmall.product.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.gmall.entity.SkuAttrValue;
+import com.atguigu.gmall.product.entity.SkuAttrValue;
 import com.atguigu.gmall.product.service.SkuAttrValueService;
 import com.atguigu.gmall.product.mapper.SkuAttrValueMapper;
 import org.springframework.stereotype.Service;

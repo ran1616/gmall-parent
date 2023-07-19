@@ -2,7 +2,7 @@ package com.atguigu.gmall.product.controller;
 
 import com.atguigu.gmall.common.result.Result;
 import com.atguigu.gmall.common.result.ResultCodeEnum;
-import com.atguigu.gmall.entity.BaseCategory3;
+import com.atguigu.gmall.product.entity.BaseCategory3;
 import com.atguigu.gmall.product.service.BaseCategory3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

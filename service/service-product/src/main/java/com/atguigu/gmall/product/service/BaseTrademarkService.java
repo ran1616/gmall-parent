@@ -1,6 +1,7 @@
 package com.atguigu.gmall.product.service;
 
-import com.atguigu.gmall.entity.BaseTrademark;
+import com.atguigu.gmall.product.entity.BaseTrademark;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -10,4 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface BaseTrademarkService extends IService<BaseTrademark> {
 
+    Page findByPage(Integer pageNo, Integer pageSize);
+
+    void deleteById(Long id);
 }

@@ -1,6 +1,6 @@
 package com.atguigu.gmall.product.service;
 
-import com.atguigu.gmall.entity.BaseCategory3;
+import com.atguigu.gmall.product.entity.BaseCategory3;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;

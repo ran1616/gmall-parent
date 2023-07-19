@@ -1,6 +1,6 @@
 package com.atguigu.gmall.product.mapper;
 
-import com.atguigu.gmall.entity.SkuInfo;
+import com.atguigu.gmall.product.entity.SkuInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface SkuInfoMapper extends BaseMapper<SkuInfo> {
 
+    SkuInfo findSkuInfoAndImageBySkuId(Long skuId);
 }
 
 

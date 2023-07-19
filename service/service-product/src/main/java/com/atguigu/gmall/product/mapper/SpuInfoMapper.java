@@ -1,6 +1,6 @@
 package com.atguigu.gmall.product.mapper;
 
-import com.atguigu.gmall.entity.SpuInfo;
+import com.atguigu.gmall.product.entity.SpuInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

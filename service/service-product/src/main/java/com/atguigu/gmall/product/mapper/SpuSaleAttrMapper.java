@@ -1,7 +1,9 @@
 package com.atguigu.gmall.product.mapper;
 
-import com.atguigu.gmall.entity.SpuSaleAttr;
+import com.atguigu.gmall.product.entity.SpuSaleAttr;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import java.util.List;
 
 /**
 * @author RAN
@@ -11,6 +13,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 public interface SpuSaleAttrMapper extends BaseMapper<SpuSaleAttr> {
 
+    List<SpuSaleAttr> findBySpuId(Integer spuId);
+
+    List<SpuSaleAttr> findSpuSalAttrBySkuId(Long skuId);
 }
 
 

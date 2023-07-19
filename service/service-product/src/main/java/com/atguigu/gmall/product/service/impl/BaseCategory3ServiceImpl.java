@@ -2,7 +2,7 @@ package com.atguigu.gmall.product.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.gmall.entity.BaseCategory3;
+import com.atguigu.gmall.product.entity.BaseCategory3;
 import com.atguigu.gmall.product.service.BaseCategory3Service;
 import com.atguigu.gmall.product.mapper.BaseCategory3Mapper;
 import org.springframework.stereotype.Service;

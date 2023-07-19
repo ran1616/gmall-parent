@@ -1,7 +1,9 @@
 package com.atguigu.gmall.product.service;
 
-import com.atguigu.gmall.entity.SpuSaleAttr;
+import com.atguigu.gmall.product.entity.SpuSaleAttr;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
 * @author RAN
@@ -10,4 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface SpuSaleAttrService extends IService<SpuSaleAttr> {
 
+    List<SpuSaleAttr> findBySpuId(Integer spuId);
 }

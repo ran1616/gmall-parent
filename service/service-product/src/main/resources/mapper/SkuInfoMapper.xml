@@ -4,17 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atguigu.gmall.product.mapper.SkuInfoMapper">
 
-    <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.SkuInfo">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="spuId" column="spu_id" jdbcType="BIGINT"/>
-            <result property="price" column="price" jdbcType="DECIMAL"/>
-            <result property="skuName" column="sku_name" jdbcType="VARCHAR"/>
-            <result property="skuDesc" column="sku_desc" jdbcType="VARCHAR"/>
-            <result property="weight" column="weight" jdbcType="DECIMAL"/>
-            <result property="tmId" column="tm_id" jdbcType="BIGINT"/>
-            <result property="category3Id" column="category3_id" jdbcType="BIGINT"/>
-            <result property="skuDefaultImg" column="sku_default_img" jdbcType="VARCHAR"/>
-            <result property="isSale" column="is_sale" jdbcType="TINYINT"/>
+    <resultMap id="BaseResultMap" type="com.atguigu.gmall.product.entity.SkuInfo" autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -23,4 +14,18 @@
         tm_id,category3_id,sku_default_img,
         is_sale
     </sql>
+
+    <resultMap id="RESUL_MAP_SKU_INFO_IMAGE" type="com.atguigu.gmall.product.entity.SkuInfo" autoMapping="true">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <collection property="skuImageList" ofType="com.atguigu.gmall.product.entity.SkuImage" autoMapping="true">
+            <id property="id" column="imId"></id>
+        </collection>
+    </resultMap>
+
+    <select id="findSkuInfoAndImageBySkuId" resultMap="RESUL_MAP_SKU_INFO_IMAGE">
+        select si.*, im.id imId, im.sku_id, im.img_name, im.img_url, im.spu_img_id, im.is_default
+        from sku_info si
+                 LEFT JOIN sku_image im on im.sku_id = si.id
+        where si.id = #{skuId}
+    </select>
 </mapper>

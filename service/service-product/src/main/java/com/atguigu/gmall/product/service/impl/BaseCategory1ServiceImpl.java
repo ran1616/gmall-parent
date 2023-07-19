@@ -1,7 +1,7 @@
 package com.atguigu.gmall.product.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.gmall.entity.BaseCategory1;
+import com.atguigu.gmall.product.entity.BaseCategory1;
 import com.atguigu.gmall.product.service.BaseCategory1Service;
 import com.atguigu.gmall.product.mapper.BaseCategory1Mapper;
 import org.springframework.stereotype.Service;

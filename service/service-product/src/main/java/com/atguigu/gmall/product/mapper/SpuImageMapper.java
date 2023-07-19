@@ -1,7 +1,9 @@
 package com.atguigu.gmall.product.mapper;
 
-import com.atguigu.gmall.entity.SpuImage;
+import com.atguigu.gmall.product.entity.SpuImage;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+
+import java.util.List;
 
 /**
 * @author RAN

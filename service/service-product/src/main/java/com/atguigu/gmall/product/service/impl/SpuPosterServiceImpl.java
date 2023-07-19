@@ -1,7 +1,7 @@
 package com.atguigu.gmall.product.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.gmall.entity.SpuPoster;
+import com.atguigu.gmall.product.entity.SpuPoster;
 import com.atguigu.gmall.product.service.SpuPosterService;
 import com.atguigu.gmall.product.mapper.SpuPosterMapper;
 import org.springframework.stereotype.Service;

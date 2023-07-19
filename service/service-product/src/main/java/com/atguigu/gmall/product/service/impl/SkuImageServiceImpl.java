@@ -1,7 +1,7 @@
 package com.atguigu.gmall.product.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.atguigu.gmall.entity.SkuImage;
+import com.atguigu.gmall.product.entity.SkuImage;
 import com.atguigu.gmall.product.service.SkuImageService;
 import com.atguigu.gmall.product.mapper.SkuImageMapper;
 import org.springframework.stereotype.Service;

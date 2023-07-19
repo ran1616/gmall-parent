@@ -1,6 +1,6 @@
 package com.atguigu.gmall.product.mapper;
 
-import com.atguigu.gmall.entity.BaseSaleAttr;
+import com.atguigu.gmall.product.entity.BaseSaleAttr;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

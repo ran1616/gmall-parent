@@ -1,6 +1,6 @@
 package com.atguigu.gmall.product.mapper;
 
-import com.atguigu.gmall.entity.SkuImage;
+import com.atguigu.gmall.product.entity.SkuImage;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

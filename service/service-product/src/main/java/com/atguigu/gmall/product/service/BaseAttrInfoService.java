@@ -1,7 +1,9 @@
 package com.atguigu.gmall.product.service;
 
-import com.atguigu.gmall.entity.BaseAttrInfo;
+import com.atguigu.gmall.product.entity.BaseAttrInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.List;
 
 /**
 * @author RAN
@@ -10,4 +12,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface BaseAttrInfoService extends IService<BaseAttrInfo> {
 
+    List<BaseAttrInfo> findBaseAttrInfo(Long c1Id, Long c2Id, Long c3Id);
+
+    void saveBaseAttrInfo(BaseAttrInfo baseAttrInfo);
 }

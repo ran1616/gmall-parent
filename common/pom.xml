@@ -16,6 +16,7 @@
 
         <module>common-util</module>
         <module>common-service</module>
+        <module>common-feign</module>
     </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -61,6 +62,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <scope>provided </scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>7.1.0</version>
         </dependency>
 
     </dependencies>
