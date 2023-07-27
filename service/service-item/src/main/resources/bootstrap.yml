@@ -8,3 +8,6 @@ spring:
       config:
         shared-configs:
           - common.yml
+        file-extension: yaml
+  profiles:
+    active: dev

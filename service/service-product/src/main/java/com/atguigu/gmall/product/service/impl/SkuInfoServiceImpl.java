@@ -1,6 +1,6 @@
 package com.atguigu.gmall.product.service.impl;
 
-import com.atguigu.gmall.product.dto.SkuInfoDTO;
+import com.atguigu.gmall.product.dto.SkuInfoDto;
 import com.atguigu.gmall.product.entity.SkuAttrValue;
 import com.atguigu.gmall.product.entity.SkuImage;
 import com.atguigu.gmall.product.entity.SkuSaleAttrValue;
@@ -16,6 +16,7 @@ import com.atguigu.gmall.product.mapper.SkuInfoMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -45,14 +46,15 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
     }
 
     @Override
-    public void saveSkuInfo(SkuInfoDTO skuInfoDTO) {
+    @Transactional
+    public void saveSkuInfo(SkuInfoDto skuInfoDto) {
 
         SkuInfo skuInfo = new SkuInfo();
-        BeanUtils.copyProperties(skuInfoDTO,skuInfo);
+        BeanUtils.copyProperties(skuInfoDto,skuInfo);
         this.save(skuInfo);
 
 
-        List<SkuImage> skuImageList = skuInfoDTO.getSkuImageList();
+        List<SkuImage> skuImageList = skuInfoDto.getSkuImageList();
         skuImageList.stream().map(skuImage -> {
             skuImage.setSkuId(skuInfo.getId());
             return skuImage;
@@ -61,7 +63,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
 
 
         // 保存SKU平台属性信息
-        List<SkuAttrValue> skuAttrValueList = skuInfoDTO.getSkuAttrValueList();
+        List<SkuAttrValue> skuAttrValueList = skuInfoDto.getSkuAttrValueList();
         skuAttrValueList = skuAttrValueList.stream().map(item -> {
             item.setSkuId(skuInfo.getId());
             return item ;
@@ -69,22 +71,27 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoMapper, SkuInfo>
         skuAttrValueService.saveBatch(skuAttrValueList) ;
 
         // 保存SKU销售属性信息
-        List<SkuSaleAttrValue> skuSaleAttrValueList = skuInfoDTO.getSkuSaleAttrValueList();
-        skuSaleAttrValueList = skuSaleAttrValueList.stream().map(item -> {
-            item.setSkuId(skuInfo.getId());
-            item.setSpuId(Integer.parseInt(skuInfo.getSpuId().toString()));
-            return item ;
+        List<SkuSaleAttrValue> skuSaleAttrValueList = skuInfoDto.getSkuSaleAttrValueList();
+        skuSaleAttrValueList = skuSaleAttrValueList.stream().map(skuSaleAttrValue -> {
+            skuSaleAttrValue.setSkuId(skuInfo.getId());
+            skuSaleAttrValue.setSpuId(skuInfoDto.getSpuId());
+            return skuSaleAttrValue ;
         }).collect(Collectors.toList()) ;
         skuSaleAttrValueService.saveBatch(skuSaleAttrValueList) ;
     }
 
     @Override
-    public void updateSaleStatus(Long skuId, String number) {
-        // 构建skuInfo数据，执行更新操作
-        SkuInfo skuInfo = new SkuInfo() ;
-        skuInfo.setId(skuId);
-        skuInfo.setIsSale(Integer.parseInt(number));
-        updateById(skuInfo) ;
+    public void onSale(Long skuId) {
+        SkuInfo skuInfo = this.getById(skuId);
+        skuInfo.setIsSale(1);
+        this.updateById(skuInfo) ;
+    }
+
+    @Override
+    public void cancelSale(Long skuId) {
+        SkuInfo skuInfo = this.getById(skuId);
+        skuInfo.setIsSale(0);
+        this.updateById(skuInfo) ;
     }
 
 

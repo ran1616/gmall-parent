@@ -9,20 +9,22 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Data
-public class SkuInfoDTO {
+public class SkuInfoDto {
 
-    private Long id;
-    private Long spuId;
-    private Double price;
-    private String skuName;
-    private String skuDesc;
-    private BigDecimal weight;
-    private Long tmId;
-    private Long category3Id;
-    private String skuDefaultImg;
+    private Long id ;
+    private Long spuId ;
+    private BigDecimal price ;
+    private  String skuName ;
+    private BigDecimal weight ;
+    private String skuDesc ;
+    private Long category3Id ;
+    private String skuDefaultImg ;
+    private Long tmId ;
 
-    private List<SkuAttrValue> skuAttrValueList ;
+    private List<SkuAttrValue> skuAttrValueList ;       // 平台属性值的集合
+
     private List<SkuSaleAttrValue> skuSaleAttrValueList ;
+
     private List<SkuImage> skuImageList ;
 
 }

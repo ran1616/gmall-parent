@@ -16,8 +16,8 @@ public class ItemController {
     @Autowired
     private SkuDetailFeignClient skuDetailFeignClient ;
 
-    @GetMapping(value = "/{skuId}.html")
-    public String item(@PathVariable(value = "skuId") Long skuId , Model model) {
+    @GetMapping("/{skuId}.html")
+    public String item(@PathVariable("skuId") Long skuId , Model model) {
         Result<SkuDetailVo> result = skuDetailFeignClient.item(skuId);
         SkuDetailVo skuDetailVo = result.getData();
 

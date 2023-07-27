@@ -14,10 +14,10 @@ spring:
 
 # 配置邮件的相关信息
   mail:
-    host: smtp.163.com
-    port: 465
-    username:
-    password:
+    host: smtp.office365.com
+    port: 587
+    username: r1506754232@outlook.com
+    password: RANran161671053
     properties:
       mail:
         smtp:
@@ -30,8 +30,8 @@ spring:
     admin:
       notify:
         mail:
-          to:
-          from:
+          to: r1506754232@outlook.com
+          from: r1506754232@outlook.com
           enabled: true
         filter:
           health-status: DOWN        # 邮件通知策略，当微服务下线的时候发送通知邮件

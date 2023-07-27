@@ -1,6 +1,7 @@
 package com.atguigu.gmall.product.service;
 
-import com.atguigu.gmall.product.dto.SkuInfoDTO;
+import com.atguigu.gmall.product.dto.SkuInfoDto;
+import com.atguigu.gmall.product.dto.SkuInfoDto;
 import com.atguigu.gmall.product.entity.SkuInfo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -14,7 +15,9 @@ public interface SkuInfoService extends IService<SkuInfo> {
 
     Page findSkuInfoPage(Integer pageNO, Integer limit);
 
-    void saveSkuInfo(SkuInfoDTO skuInfoDTO);
+    void saveSkuInfo(SkuInfoDto skuInfoDto);
 
-    void updateSaleStatus(Long skuId, String number);
+    void onSale(Long skuId);
+
+    void cancelSale(Long skuId);
 }

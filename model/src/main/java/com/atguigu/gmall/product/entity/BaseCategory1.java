@@ -13,18 +13,14 @@ import lombok.Data;
  */
 @TableName(value ="base_category1")
 @Data
-public class BaseCategory1 implements Serializable {
+public class BaseCategory1 {
     /**
      * 编号
      */
     @TableId(type = IdType.AUTO)
     private Long id;
 
-    /**
-     * 分类名称
-     */
-    private String name;
+    @TableField(value = "name")
+    private String name ;
 
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }

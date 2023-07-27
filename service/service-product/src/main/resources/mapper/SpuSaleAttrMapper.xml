@@ -7,7 +7,7 @@
     <resultMap id="BaseResultMap" type="com.atguigu.gmall.product.entity.SpuSaleAttr" autoMapping="true">
             <id property="id" column="id" jdbcType="BIGINT"/>
         <collection property="spuSaleAttrValueList" ofType="com.atguigu.gmall.product.entity.SkuSaleAttrValue" autoMapping="true">
-            <id property="id" column="ssavid"></id>
+            <id property="id" column="ssavId"></id>
         </collection>
     </resultMap>
 

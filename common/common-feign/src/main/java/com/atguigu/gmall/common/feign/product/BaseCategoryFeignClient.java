@@ -12,6 +12,6 @@ import java.util.List;
 public interface BaseCategoryFeignClient {
 
     @GetMapping(value = "/api/inner/product/findAllCategoryTree")
-    public abstract Result<List<CategoryVo>> findAllCategoryTree() ;
+    Result<List<CategoryVo>> findAllCategoryTree() ;
 
 }

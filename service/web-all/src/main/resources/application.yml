@@ -10,7 +10,9 @@ spring:
     prefix: classpath:/templates/
   main:
     allow-bean-definition-overriding: true
-
+  redis:
+    host: 192.168.100.50
+    port: 6379
 # 配置feign的超时时间
 feign:
   client:
@@ -20,3 +22,7 @@ feign:
         readTimeout: 1000
   sentinel:
     enabled: true
+
+logging:
+  file:
+    name: E://newcode/gmall-parent/service/logs/web-all

@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface BaseCategoryBizService {
 
-    public abstract List<CategoryVo> findAllCategoryTree();
+     List<CategoryVo> findAllCategoryTree();
 }
