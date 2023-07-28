@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/common/common-feign/pom.xml" />
         <option value="$PROJECT_DIR$/service/service-canal/pom.xml" />
         <option value="$PROJECT_DIR$/common/common-cache/pom.xml" />
+        <option value="$PROJECT_DIR$/service/service-search/pom.xml" />
       </list>
     </option>
   </component>

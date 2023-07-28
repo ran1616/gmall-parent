@@ -1,0 +1,11 @@
+# 配置服务端口号
+server:
+  port: 10500
+
+logging:
+  file:
+    name: E://newcode/gmall-parent/service-search/info.log
+spring:
+  elasticsearch:
+    rest:
+      uris: http://192.168.100.50:9200
